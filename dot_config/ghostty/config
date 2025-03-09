@@ -1,0 +1,10 @@
+# テーマ
+theme = catppuccin-mocha
+
+# 背景の透明度
+background-opacity = 0.8
+
+# 背景をぼかす
+background-blur-radius = 10
+
+resize-overlay = never

@@ -1,0 +1,131 @@
+{
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "height": 30,
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "battery",
+        "custom/brightness",
+        "clock"
+    ],
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 35,
+        "rewrite": {
+            "": "Hyprland"
+        },
+        "separate-outputs": true
+    },
+    "hyprland/workspaces": {
+        "format": "{icon} ",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "\uf268",
+            "2": "\uf113",
+            "3": "\uf120"
+        },
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "*": 3,
+            "HDMI-A-1": 3
+        }
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>\n<big>{:%I:%M %p}</big>"
+    },
+    
+    "custom/brightness": {
+    "format": "{icon} {percent}%",
+    "format-alt": "{percent}%",
+    "on-click": "brightnessctl set +10%", 
+    "on-scroll-up": "brightnessctl set +5%", 
+    "on-scroll-down": "brightnessctl set 5%-", 
+    "tooltip": false, 
+    "format-icons": {
+        "low": "",    
+        "medium": "", 
+        "high": ""    
+    }
+},
+
+    
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+
+
+"network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format": "{icon} {bandwidthTotalBytes}",
+    "format-disconnected": "{icon} No Internet",
+    "format-linked": "{icon}  {ifname} (No IP)",
+    "format-alt": "{icon} {bandwidthUpBytes} | {bandwidthDownBytes}",
+    "tooltip-format": "{icon} {ifname}: {ipaddr}/{cidr}  {gwaddr}",
+    "tooltip-format-wifi": "{wifiIcon} {essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{icon} {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "{icon} Disconnected",
+    "on-click-right": "nm-connection-editor",
+    "format-icons": {
+        "ethernet": "",
+        "disconnected": "⚠",
+        "wifi": [
+            "",
+            ""
+        ]
+    },
+    "interval": 2
+}
+
+
+,
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    }
+}
