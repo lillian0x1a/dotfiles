@@ -1,0 +1,54 @@
+#!/bin/bash
+{{ if eq .chezmoi.os "darwin" }}
+brew install git fish neovim starship ghostty
+{{ else if eq .chezmoi.os "linux" }}
+pacman -Syyu
+echo "install app by pacman"
+sudo pacman -S hyprland hyprlock hyprpaper\
+	waybar wofi dunst nemo\  #WM ex..
+	starship neovim ghostty fish\  #terminal and cli tool
+	fcitx-skk fcitx-im noto-fonts-cjk\  #font and ime
+sudo pacman -S qemu-full qemu-img libvirt virt-install virt-manager\
+	virt-viewer edk2-ovmf dnsmasq swtpm libosinfo tuned ntfs-3g #QEMU/KVM導入
+sudo pacman -S nerd-fonts
+echo 'Finished installaction in pacman'
+
+# setting ime
+echo "export GTK_IM_MODULE=fcitx" >> ~/.xprofile
+echo "export QT_IM_MODULE=fcitx" >> ~/.xprofile
+echo "export XMODIFIERS=@im=fcitx" >> ~/.xprofile
+echo "export EDITOR=nvim" >> ~/.xprofile
+
+echo 'install yay'
+# ユーザーに「y」または「n」を入力させる
+read -p "続行しますか？ (y/n): " answer
+# 入力が「y」または「n」に基づいて処理を分岐
+if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
+    echo "続行します"
+    	sudo pacman -S git fakeroot binutils make gcc
+	sudo pacman -S --needed git base-devel
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+	yay -Syu
+	cd ..
+	rm -fr yay
+	echo 'Yay installaction completed'
+elif [[ "$answer" == "n" || "$answer" == "N" ]]; then
+    echo "終了します"
+else
+    echo "無効な入力です。yかnを入力してください。"
+fi
+
+read -p "Do you install yay app? (y/n): " answer
+if [[ "$answer" == "y" || "$answer" == "Y"]]; then
+	yay -S ttf-hackgen visual-studio-code-bin obsidian\
+		localsend
+elif [[ "$answer" == "n" || "$answer" == "N" ]]; then
+	echo "finish"
+else
+    echo "無効な入力です。yかnを入力してください。"
+fi
+
+{{ end }}
+
