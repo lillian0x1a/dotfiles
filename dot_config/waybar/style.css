@@ -1,0 +1,79 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 10pt;
+  font-weight: bold;
+  border-radius: 8px;
+  transition-duration: 0.5s;
+  color: white;
+}
+@keyframes blink_red {
+  to {
+    background-color: rgb(242, 143, 173);
+    color: rgb(26, 24, 38);
+  }
+}
+.warning,
+.critical,
+.urgent {
+  animation-name: blink_red;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+window#waybar {
+  background-color: transparent;
+}
+window > box {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  background-color: rgba(30, 30, 42, 0);
+  padding: 3px;
+  padding-left: 8px;
+  border: 2px nonergb(0, 191, 255);
+}
+#workspaces {
+  padding-left: 0px;
+  padding-right: 4px;
+  margin-top: 3px;
+  margin-bottom: 2px;
+  margin-right: 10px;
+  margin-left: 25px;
+}
+#workspaces button {
+  border-radius: 15px;
+  margin-right: 10px;
+  padding: 1px 10px;
+  font-weight: bolder;
+  background-color: rgba(18, 18, 18, 0);
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+  padding: 0 22px;
+  background: rgb(74, 202, 96);
+}
+
+#workspaces button.urgent {
+  color: rgba(26, 24, 38, 0);
+}
+#workspaces button:hover {
+  background-color: rgba(245, 182, 140, 0.5);
+  color: rgba(26, 24, 38, 0.8);
+}
+tooltip {
+  background: rgba(30, 30, 42, 0);
+}
+tooltip label {
+  color: rgb(137, 102, 177);
+}
+#clock {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: rgb(217, 224, 238);
+}
+#tray {
+  padding-right: 8px;
+  padding-left: 10px;
+}
