@@ -2,4 +2,6 @@
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
 export EDITOR=nvim
+export UPDATE_FZF_ZSH_COMPLETION=0  
+export UPDATE_FZF_ZSH_PATH=0  
 
