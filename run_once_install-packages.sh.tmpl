@@ -1,57 +1,37 @@
 #!/bin/bash
-{{ if eq .chezmoi.os "linux" }}
-pacman -Syyu
-echo "install app by pacman"
-read -p "続行しますか？ (y/n): " answer
-# 入力が「y」または「n」に基づいて処理を分岐
-if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
-  echo "続行します"
-    sudo pacman -S hyprland hyprlock hyprpaper\
-	  waybar wofi dunst nemo brightnessctl\
-	  starship neovim ghostty fish\
-	  fcitx-skk fcitx-im noto-fonts-cjk nerd-fonts
-  echo 'Finished installaction in pacman'
+set -e
+echo "Start installing Arch Linux Package"
 
-  # setting ime
-  echo "export GTK_IM_MODULE=fcitx" >> ~/.xprofile
-  echo "export QT_IM_MODULE=fcitx" >> ~/.xprofile
-  echo "export XMODIFIERS=@im=fcitx" >> ~/.xprofile
-  echo "export EDITOR=nvim" >> ~/.xprofile
-elif [[ "$answer" == "n" || "$answer" == "N" ]]; then
-    echo "終了します"
+echo "install pacman Packagea"
+
+sudo pacman -Sy --noconfirm
+
+sudo pacman -S \
+  hyprland hyprlock hyprpaper waybar wofi dunst \
+  starship neovim ghostty nemo base-devel \
+  brightnessctl noto-fonts-cjk \
+  fcitx5-skk fcitx5-im
+
+echo "finish installing pacman package"
+
+if ! command -v yay &>/dev/null; then
+  echo "install yay"
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si
+  yay -Syu
+  cd ..
+  rm -fr yay
+  echo "finish installing yay"
 else
-    echo "無効な入力です。yかnを入力してください。"
+  echo "have installed yet"
 fi
 
-echo 'install yay'
-# ユーザーに「y」または「n」を入力させる
-read -p "続行しますか？ (y/n): " answer
-# 入力が「y」または「n」に基づいて処理を分岐
-if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
-  echo "続行します"
-   	sudo pacman -S git fakeroot binutils make gcc
-	  sudo pacman -S --needed git base-devel
-	  git clone https://aur.archlinux.org/yay.git
-	  cd yay
-	  makepkg -si
-	  yay -Syu
-	  cd ..
-	  rm -fr yay
-	echo 'Yay installaction completed'
-elif [[ "$answer" == "n" || "$answer" == "N" ]]; then
-    echo "終了します"
+if command -v yay &>/dev/null; then
+  yay -S \
+    ttf-hackgen obsidian qt5ct qt6ct kvantum kvantum-qt5 \
+    everforest-gtk-theme-git nwg-look
+  echo "finish installing yay package"
 else
-    echo "無効な入力です。yかnを入力してください。"
+  echo "don't install yay, skip yay package"
 fi
-
-read -p "Do you install yay app? (y/n): " answer
-if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
-	yay -S ttf-hackgen obsidian
-elif [[ "$answer" == "n" || "$answer" == "N" ]]; then
-	echo "finish"
-else
-    echo "無効な入力です。yかnを入力してください。"
-fi
-
-{{ end }}
-
