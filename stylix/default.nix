@@ -42,7 +42,7 @@ in
     targets = {
       gtk.enable = true;  # GTK アプリのテーマ適用
       qt.enable = true;
-      rofi.enable = false;
+      # rofi.enable = false;
       firefox.profileNames = [ "nix" ];  # プロファイル名を指定
       librewolf.profileNames = [ "default" ];
     };
