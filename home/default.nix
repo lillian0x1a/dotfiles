@@ -13,7 +13,6 @@
       ./browser.nix
       ./terminal.nix
       ./ime.nix
-      ./wofi.nix
       ../stylix
     ];
     nixpkgs.config = {
