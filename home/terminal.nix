@@ -1,4 +1,12 @@
-{ pkgs, ... }:{
+{ pkgs, specialArgs, ... }:{
+  programs.git = {
+    enable = true;
+    userName = specialArgs.gitUsername;
+    userEmail = specialArgs.gitUseremail;
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
+  };
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";

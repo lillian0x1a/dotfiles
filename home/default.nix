@@ -1,7 +1,9 @@
 { specialArgs, inputs, ... }:{
   home-manager.backupFileExtension = "backup";
   home-manager.useUserPackages = true;
-  home-manager.extraSpecialArgs = { inherit inputs; };
+  home-manager.extraSpecialArgs = { 
+    inherit inputs specialArgs;
+  };
   home-manager.users.${specialArgs.username} = { pkgs, lib, inputs, ... }:{
     imports = [
       inputs.stylix.homeModules.stylix
@@ -38,14 +40,6 @@
     };
     programs = {
       home-manager.enable = true;
-      git = {
-        enable = true;
-        userName = specialArgs.gitUsername;
-        userEmail = specialArgs.gitUseremail;
-        extraConfig = {
-          init.defaultBranch = "main";
-        };
-      };
       ghostty = {
         enable = true;
         enableZshIntegration = true;
