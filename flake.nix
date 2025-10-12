@@ -19,8 +19,12 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = { self, nixpkgs, home-manager, hyprland, sddm-sugar-candy-nix, stylix, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, sddm-sugar-candy-nix, stylix, sops-nix, lanzaboote, ... }@inputs:
   let
     hostname = "nixos";
     system = "x86_64-linux";
@@ -40,6 +44,7 @@
         sddm-sugar-candy-nix.nixosModules.default
         home-manager.nixosModules.home-manager
         sops-nix.nixosModules.sops
+        lanzaboote.nixosModules.lanzaboote
         ./sub
         ./home
         ./secrets
