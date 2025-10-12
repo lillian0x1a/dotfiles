@@ -23,8 +23,12 @@
       url = "github:nix-community/lanzaboote/v0.4.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = { self, nixpkgs, home-manager, hyprland, sddm-sugar-candy-nix, stylix, sops-nix, lanzaboote, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, sddm-sugar-candy-nix, stylix, sops-nix, lanzaboote, nixvim, ... }@inputs:
   let
     hostname = "nixos";
     system = "x86_64-linux";
