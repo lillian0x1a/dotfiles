@@ -8,13 +8,14 @@
     imports = [
       inputs.stylix.homeModules.stylix
       ./hyprland
+      ./nixvim
       ./rofi
-      ./wlogout
-      ./swww.nix
       ./waybar
+      ./wlogout
       ./browser.nix
-      ./terminal.nix
       ./ime.nix
+      ./swww.nix
+      ./terminal.nix
       ../stylix
     ];
     nixpkgs.config = {
