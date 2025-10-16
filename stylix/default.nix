@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 let
   themes = {
     polarity = "dark";
@@ -11,6 +11,10 @@ let
   };
 in
 {
+  imports = [
+    # inputs.stylix.nixosModules.stylix
+    inputs.stylix.homeModules.stylix
+  ];
   stylix = {
     enable = true;
     image = ../home/wallpapers/FF8DA8EF.jpeg;

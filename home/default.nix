@@ -6,7 +6,6 @@
   };
   home-manager.users.${specialArgs.username} = { pkgs, lib, inputs, ... }:{
     imports = [
-      inputs.stylix.homeModules.stylix
       inputs.nixvim.homeManagerModules.nixvim
       ./hyprland
       ./nixvim
