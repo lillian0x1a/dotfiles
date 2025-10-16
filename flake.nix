@@ -46,7 +46,6 @@
       modules = [
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
-        sops-nix.nixosModules.sops
         ./sub
         ./home
         ./secrets
