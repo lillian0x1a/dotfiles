@@ -47,7 +47,6 @@
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         sops-nix.nixosModules.sops
-        lanzaboote.nixosModules.lanzaboote
         ./sub
         ./home
         ./secrets
