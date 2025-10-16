@@ -46,12 +46,6 @@
         enable = true;
         enableZshIntegration = true;
       };
-      zed-editor = {
-        enable = true;
-        userSettings = {
-          vim_mode = true;
-        };
-      };
     };
   };
 }
