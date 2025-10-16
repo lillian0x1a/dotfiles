@@ -45,7 +45,6 @@
       };
       modules = [
         stylix.nixosModules.stylix
-        sddm-sugar-candy-nix.nixosModules.default
         home-manager.nixosModules.home-manager
         sops-nix.nixosModules.sops
         lanzaboote.nixosModules.lanzaboote
