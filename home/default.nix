@@ -14,6 +14,7 @@
       ./waybar
       ./wlogout
       ./browser.nix
+      ./ghostty.nix
       ./ime.nix
       ./swww.nix
       ./terminal.nix
