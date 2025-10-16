@@ -25,10 +25,6 @@
       ];
     };
     home.stateVersion = specialArgs.stateVersion;
-    home.sessionVariables = {
-      GIT_ASKPASS = "";
-      SSH_ASKPASS = "";
-    };
     home.packages = with pkgs; [
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
