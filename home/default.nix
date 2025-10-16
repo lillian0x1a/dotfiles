@@ -40,12 +40,6 @@
     services.mako = {
       enable = true;
     };
-    programs = {
-      home-manager.enable = true;
-      ghostty = {
-        enable = true;
-        enableZshIntegration = true;
-      };
-    };
+    programs.home-manager.enable = true;
   };
 }
