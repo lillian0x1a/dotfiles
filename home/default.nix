@@ -14,6 +14,7 @@
       ./browser.nix
       ./ghostty.nix
       ./ime.nix
+      ./mako.nix
       ./swww.nix
       ./terminal.nix
       ../stylix
