@@ -87,8 +87,8 @@
       };
 
       "element-text" = {
-        # vertical-align = 0.5;
-        # horizontal-align = 0.0;
+        vertical-align = mkLiteral "0.5";
+        horizontal-align = mkLiteral "0.0";
         cursor = mkLiteral "inherit";
         # background-color = mkLiteral "transparent";
       };
