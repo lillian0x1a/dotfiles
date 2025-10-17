@@ -321,7 +321,7 @@
         "type": "github"
       }
     },
-    "home-manager": {
+    "hm": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -828,13 +828,13 @@
     },
     "root": {
       "inputs": {
-        "home-manager": "home-manager",
+        "hm": "hm",
         "hyprland": "hyprland",
         "lanzaboote": "lanzaboote",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
-        "sddm-sugar-candy-nix": "sddm-sugar-candy-nix",
-        "sops-nix": "sops-nix",
+        "sddm-sugar-candy": "sddm-sugar-candy",
+        "sops": "sops",
         "stylix": "stylix"
       }
     },
@@ -859,7 +859,7 @@
         "type": "github"
       }
     },
-    "sddm-sugar-candy-nix": {
+    "sddm-sugar-candy": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -879,18 +879,18 @@
         "type": "gitlab"
       }
     },
-    "sops-nix": {
+    "sops": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1759635238,
-        "narHash": "sha256-UvzKi02LMFP74csFfwLPAZ0mrE7k6EiYaKecplyX9Qk=",
+        "lastModified": 1760393368,
+        "narHash": "sha256-8mN3kqyqa2PKY0wwZ2UmMEYMcxvNTwLaOrrDsw6Qi4E=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "6e5a38e08a2c31ae687504196a230ae00ea95133",
+        "rev": "ab8d56e85b8be14cff9d93735951e30c3e86a437",
         "type": "github"
       },
       "original": {

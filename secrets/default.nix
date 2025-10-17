@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    inputs.sops-nix.nixosModules.sops
+    inputs.sops.nixosModules.sops
   ];
   sops = {
     defaultSopsFile = ./secrets.yaml;

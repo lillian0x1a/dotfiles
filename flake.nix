@@ -2,12 +2,12 @@
   description = "A declarative NixOS system configuration using Flakes";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    home-manager = {
+    hm = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    sddm-sugar-candy-nix = {
+    sddm-sugar-candy = {
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -15,7 +15,7 @@
       url = "github:danth/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    sops-nix = {
+    sops = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -28,7 +28,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, home-manager, hyprland, sddm-sugar-candy-nix, stylix, sops-nix, lanzaboote, nixvim, ... }@inputs:
+  outputs = inputs@{nixpkgs, hm, stylix, ...}:
   let
     hostname = "nixos";
     system = "x86_64-linux";
@@ -45,7 +45,7 @@
       };
       modules = [
         stylix.nixosModules.stylix
-        home-manager.nixosModules.home-manager
+        hm.nixosModules.home-manager
         ./sub
         ./home
         ./secrets

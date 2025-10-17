@@ -1,8 +1,8 @@
 {inputs, ...}:{
   imports = [
-    inputs.sddm-sugar-candy-nix.nixosModules.default
+    inputs.sddm-sugar-candy.nixosModules.default
   ];
-  nixpkgs.overlays = [ inputs.sddm-sugar-candy-nix.overlays.default ];
+  nixpkgs.overlays = [ inputs.sddm-sugar-candy.overlays.default ];
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
