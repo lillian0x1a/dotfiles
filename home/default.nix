@@ -11,7 +11,6 @@
       ./nixvim
       ./rofi
       ./waybar
-      ./wlogout
       ./browser.nix
       ./ghostty.nix
       ./ime.nix
