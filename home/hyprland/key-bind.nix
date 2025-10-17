@@ -4,6 +4,7 @@
     "$terminal" = "ghostty";
     "$menu" = "rofi -show drun";
     "$brouwser" = "firefox";
+    "$power-menu" = "${builtins.toString ../rofi/powermenu.sh}";
     bind = [
       "$mainMod, Return, exec, $terminal"
       "$mainMod, X, killactive,"
@@ -13,7 +14,7 @@
       "$mainMod, P, pseudo," # dwindle
       "$mainMod, T, togglesplit," # dwindle
       "$mainMod, W, exec, hyprlock"
-      "$mainMod, Q, exec, wlogout"
+      "$mainMod, Q, exec, $power-menu"
       "$mainMod, B, exec, $brouwser"
       #FullScreen mode
       "$mainMod, F, fullscreen, 1"
