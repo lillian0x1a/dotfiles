@@ -33,9 +33,6 @@
       nerd-fonts.fira-code
       vscode
     ];
-    services.mako = {
-      enable = true;
-    };
     programs.home-manager.enable = true;
   };
 }
