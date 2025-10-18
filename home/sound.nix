@@ -1,4 +1,4 @@
-{...}:{
+{
   services = {
     easyeffects.enable = true;
     swayosd.enable = true;
