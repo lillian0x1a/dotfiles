@@ -12,11 +12,11 @@
       ./nixvim
       ./rofi
       ./scripts
-      ./waybar
       ./browser.nix
       ./ghostty.nix
       ./ime.nix
       ./mako.nix
+      ./sound.nix
       ./swww.nix
       ./terminal.nix
       ../stylix
@@ -36,8 +36,5 @@
       vscode
     ];
     programs.home-manager.enable = true;
-    services.easyeffects.enable = true;
-    services.swayosd.enable = true;
-    services.playerctld.enable = true;
   };
 }
