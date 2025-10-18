@@ -57,8 +57,8 @@
       "$mainMod, mouse_up, workspace, e+1"
       "$mainMod, mouse_down, workspace, e-1"
       #brightness
-      " , XF86MonBrightnessUp, exec, brightnessctl set +10%"
-      " , XF86MonBrightnessDown, exec,  brightnessctl set 10%-"
+      " , XF86MonBrightnessUp, exec, swayosd-client --brightness raise 5"
+      " , XF86MonBrightnessDown, exec,  swayosd-client --brightness lower 5"
     ];
     bindm = [
       # Move/resize windows with mainMod + LMB/RMB and dragging
@@ -66,9 +66,9 @@
       "$mainMod, mouse:273, resizewindow"
     ];
     binde =[
-      " , XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+"
-      " , XF86AudioLowerVolume, exec, wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-"
-      " , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      " , XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise --max-volume 100"
+      " , XF86AudioLowerVolume, exec, swayosd-client --output-volume lower --max-volume 100"
+      " , XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
     ];
   };
 }

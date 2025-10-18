@@ -7,6 +7,7 @@
   home-manager.users.${specialArgs.username} = { pkgs, lib, inputs, ... }:{
     imports = [
       inputs.nixvim.homeManagerModules.nixvim
+      ./eww
       ./hyprland
       ./nixvim
       ./rofi
@@ -36,5 +37,7 @@
     ];
     programs.home-manager.enable = true;
     services.easyeffects.enable = true;
+    services.swayosd.enable = true;
+    services.playerctld.enable = true;
   };
 }
