@@ -27,7 +27,6 @@
       url = "github:nix-community/nixvim/nixos-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixvim.url = "github:lillian0x1a/nixvim-config";
   };
   outputs = inputs@{nixpkgs, hm, stylix, ...}:
   let
