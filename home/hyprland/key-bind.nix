@@ -5,10 +5,8 @@
     "$menu" = "rofi -show drun";
     "$brouwser" = "firefox";
     "$power-menu" = "${builtins.toString ../rofi/powermenu.sh}";
-    "$show-time" = "${builtins.toString ../scripts/showtime.sh}";
     "$sysinfo" = "${builtins.toString ../scripts/sysinfo.sh}";
     "$toggle-eww" = "${builtins.toString ../eww/scripts/toggle-eww.sh}";
-    "$battery-notify" = "${builtins.toString ../scripts/battery-notify.sh}";
     bind = [
       "$mainMod, Return, exec, $terminal"
       "$mainMod, X, killactive,"
@@ -20,10 +18,8 @@
       "$mainMod, W, exec, hyprlock"
       "$mainMod, Q, exec, $power-menu"
       "$mainMod, B, exec, $brouwser"
-      "$mainMod, C, exec, $show-time"
       "$mainMod, I, exec, $sysinfo"
       "$mainMod, M, exec, $toggle-eww"
-      "$mainMod, Y, exec, $battery-notify"
       #FullScreen mode
       "$mainMod, F, fullscreen, 1"
       "$mainMod, G, fullscreen"
