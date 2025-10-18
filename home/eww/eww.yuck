@@ -1,0 +1,23 @@
+(defpoll song :interval "2s" "bash ~/.config/eww/scripts/get-mpris.sh")
+
+(defwidget media-widget []
+  (box
+    :class "media-box"
+    :orientation "h"
+    :space-evenly false
+    (button :onclick "playerctl previous" "⏮")
+    (button :onclick "playerctl play-pause" "⏯")
+    (button :onclick "playerctl next" "⏭")
+    (label :text song)))
+
+(defwindow media-window
+  :monitor 0
+  :geometry (geometry
+    :x "50%"
+    :y "90%"
+    :width "300px"
+    :height "50px"
+    :anchor "center")
+  :stacking "fg"
+  :exclusive false
+  (media-widget))

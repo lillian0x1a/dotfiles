@@ -7,6 +7,7 @@
     "$power-menu" = "${builtins.toString ../rofi/powermenu.sh}";
     "$show-time" = "${builtins.toString ../scripts/showtime.sh}";
     "$sysinfo" = "${builtins.toString ../scripts/sysinfo.sh}";
+    "$toggle-eww" = "${builtins.toString ../eww/scripts/toggle-eww.sh}";
     bind = [
       "$mainMod, Return, exec, $terminal"
       "$mainMod, X, killactive,"
@@ -20,6 +21,7 @@
       "$mainMod, B, exec, $brouwser"
       "$mainMod, C, exec, $show-time"
       "$mainMod, I, exec, $sysinfo"
+      "$mainMod, M, exec, $toggle-eww"
       #FullScreen mode
       "$mainMod, F, fullscreen, 1"
       "$mainMod, G, fullscreen"
