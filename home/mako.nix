@@ -1,4 +1,4 @@
-{...}:{
+{pkgs, ...}:{
   services.mako = {
     enable = true;
     settings = {
@@ -10,4 +10,7 @@
       anchor = "top-right";
     };
   };
+  home.packages = with pkgs; [
+      libnotify
+  ];
 }

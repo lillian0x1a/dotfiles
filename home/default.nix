@@ -33,8 +33,8 @@
       fira-code
       nerd-fonts.fira-code
       vscode
-      libnotify
     ];
     programs.home-manager.enable = true;
+    services.easyeffects.enable = true;
   };
 }
