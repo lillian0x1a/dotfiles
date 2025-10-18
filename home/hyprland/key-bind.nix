@@ -5,6 +5,8 @@
     "$menu" = "rofi -show drun";
     "$brouwser" = "firefox";
     "$power-menu" = "${builtins.toString ../rofi/powermenu.sh}";
+    "$show-time" = "${builtins.toString ../scripts/showtime.sh}";
+    "$sysinfo" = "${builtins.toString ../scripts/sysinfo.sh}";
     bind = [
       "$mainMod, Return, exec, $terminal"
       "$mainMod, X, killactive,"
@@ -16,6 +18,8 @@
       "$mainMod, W, exec, hyprlock"
       "$mainMod, Q, exec, $power-menu"
       "$mainMod, B, exec, $brouwser"
+      "$mainMod, C, exec, $show-time"
+      "$mainMod, I, exec, $sysinfo"
       #FullScreen mode
       "$mainMod, F, fullscreen, 1"
       "$mainMod, G, fullscreen"

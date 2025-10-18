@@ -10,6 +10,7 @@
       ./hyprland
       ./nixvim
       ./rofi
+      ./scripts
       ./waybar
       ./browser.nix
       ./ghostty.nix
@@ -32,6 +33,7 @@
       fira-code
       nerd-fonts.fira-code
       vscode
+      libnotify
     ];
     programs.home-manager.enable = true;
   };
