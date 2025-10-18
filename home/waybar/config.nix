@@ -15,7 +15,7 @@
       "battery"
       "cpu"
       "memory"
-      # "backlight"
+      "backlight"
       "pulseaudio"
       "bluetooth"
       "network"
@@ -70,14 +70,6 @@
       "escape" = true;
     };
 
-    "idle_inhibitor" = {
-      format = "{icon}";
-      format-icons = {
-        activated = " ";
-        deactivated = " ";
-      };
-    };
-
     "tray" = {
       spacing = "10";
     };
@@ -95,7 +87,6 @@
 
     "memory" = {
       format = "  {}%";
-      # on-click = "foot -e btop";
     };
 
     "backlight" = {
