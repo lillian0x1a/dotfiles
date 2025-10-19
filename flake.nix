@@ -29,7 +29,7 @@
     };
     xremap.url = "github:xremap/nix-flake";
   };
-  outputs = inputs@{nixpkgs, hm, stylix, ...}:
+  outputs = inputs@{nixpkgs, hm, ...}:
   let
     hostname = "nixos";
     system = "x86_64-linux";
@@ -45,11 +45,10 @@
         inherit hostname system stateVersion username gitUsername gitUseremail inputs;
       };
       modules = [
-        stylix.nixosModules.stylix
         hm.nixosModules.home-manager
-        ./sub
         ./home
         ./secrets
+        ./sub
       ];
     };
   };
