@@ -20,7 +20,6 @@
 | Prompt | Starship |
 | Secrets Mgmt | sops-nix |
 | Shell | Zsh |
-| Status Bar | waybar |
 | Style Manager | stylix |
 | Terminal | Ghostty |
 | Window Manager | Hyprland |
@@ -136,12 +135,8 @@ sudo nixos-rebuild switch --flake .#<hostname>
 │   │   └── rofi.png
 │   ├── swww.nix
 │   ├── terminal.nix
-│   ├── wallpapers/
-│   │   └── *.jpeg
-│   └── waybar/
-│       ├── config.nix
-│       ├── default.nix
-│       └── style.css
+│   └── wallpapers/
+│       └── *.jpeg
 ├── secrets/
 │   ├── default.nix
 │   └── secrets.yaml  # sops で暗号化されたファイルを置く
