@@ -28,11 +28,6 @@
     };
     home.stateVersion = specialArgs.stateVersion;
     home.packages = with pkgs; [
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      noto-fonts-emoji
-      fira-code
-      nerd-fonts.fira-code
       vscode
     ];
     programs.home-manager.enable = true;
