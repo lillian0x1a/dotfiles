@@ -5,6 +5,7 @@
     ./sddm.nix
     ./user.nix
     ./window-manager.nix
+    ./xremap.nix
   ];
   nix = {
     settings = {

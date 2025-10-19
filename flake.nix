@@ -27,6 +27,7 @@
       url = "github:nix-community/nixvim/nixos-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    xremap.url = "github:xremap/nix-flake";
   };
   outputs = inputs@{nixpkgs, hm, stylix, ...}:
   let
