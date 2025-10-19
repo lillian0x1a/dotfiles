@@ -16,7 +16,7 @@
 | Editor | NixVim (Neovim) |
 | File Manager | Yazi |
 | Launcher | rofi |
-| Notifications | Mako |
+| Notifications | Swaync |
 | Prompt | Starship |
 | Secrets Mgmt | sops-nix |
 | Shell | Zsh |
@@ -107,7 +107,6 @@ sudo nixos-rebuild switch --flake .#<hostname>
 - Mod + x : ウィンドウ閉じる
 - Mod + f : フルスクリーン切替
 - Mod + h / l / j / k : フォーカス移動（左/右/下/上）
-- Mod + (1~0) : (1~0)のワークスペースに移動
 
 ## ディレクトリ構成（抜粋）
 
@@ -127,7 +126,6 @@ sudo nixos-rebuild switch --flake .#<hostname>
 │   │   ├── hyprlock.nix
 │   │   └── key-bind.nix
 │   ├── ime.nix
-│   ├── mako.nix
 │   ├── nixvim/
 │   ├── rofi/
 │   │   ├── default.nix

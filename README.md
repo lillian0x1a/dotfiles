@@ -18,7 +18,7 @@ Overview of contents:
 | Editor | NixVim (Neovim) |
 | File Manager | Yazi |
 | Launcher | rofi |
-| Notifications | Mako |
+| Notifications | Swaync |
 | Prompt | Starship |
 | Secrets Mgmt | sops-nix |
 | Shell | Zsh |
@@ -108,7 +108,6 @@ sudo nixos-rebuild switch --flake .#<hostname>
 - Mod + x : Close window
 - Mod + f : Toggle fullscreen
 - Mod + h / l / j / k : Focus movement (left/right/down/up)
-- Mod + (1~0) : Move to workspace (1~0)
 
 ## Directory Structure (Excerpt)
 
@@ -128,7 +127,6 @@ sudo nixos-rebuild switch --flake .#<hostname>
 │   │   ├── hyprlock.nix
 │   │   └── key-bind.nix
 │   ├── ime.nix
-│   ├── mako.nix
 │   ├── nixvim/
 │   ├── rofi/
 │   │   ├── default.nix
