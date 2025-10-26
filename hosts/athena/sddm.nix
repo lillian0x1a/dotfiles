@@ -10,7 +10,7 @@
       enable = true;
       settings = {
         FormPosition = "right";
-        Background = "${builtins.toString ../home/wallpapers/D894C384.jpeg}";
+        Background = "${builtins.toString ../../home/wallpapers/D894C384.jpeg}";
       };
     };
   };

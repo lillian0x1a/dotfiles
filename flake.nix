@@ -23,15 +23,18 @@
       url = "github:nix-community/lanzaboote/v0.4.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixvim = {
       url = "github:nix-community/nixvim/nixos-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xremap.url = "github:xremap/nix-flake";
   };
-  outputs = inputs@{nixpkgs, hm, ...}:
+  outputs = inputs@{nixpkgs, hm, disko, ...}:
   let
-    hostname = "nixos";
     system = "x86_64-linux";
     stateVersion = "25.05";
     username = "lillian";
@@ -39,17 +42,29 @@
     gitUseremail = "183957662+lillian0x1a@users.noreply.github.com";
   in
   {
-    nixosConfigurations."${hostname}" = nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = {
-        inherit hostname system stateVersion username gitUsername gitUseremail inputs;
+    nixosConfigurations = {
+      athena = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          hostname = "athena";
+          inherit system stateVersion username gitUsername gitUseremail inputs;
+        };
+        modules = [
+          hm.nixosModules.home-manager
+          ./home
+          ./hosts/athena
+          ./secrets
+        ];
       };
-      modules = [
-        hm.nixosModules.home-manager
-        ./home
-        ./secrets
-        ./sub
-      ];
+      asgard = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { hostname = "asgard"; };
+        modules = [
+          disko.nixosModules.disko
+          ./hosts/asgard/configuration.nix
+          ./hosts/asgard/disko.nix
+        ];
+      };
     };
   };
 }
