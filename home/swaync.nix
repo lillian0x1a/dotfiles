@@ -1,5 +1,5 @@
 {pkgs, ...}:{
-    services.swaync = {
+  services.swaync = {
     enable = true;
   };
   home.packages = with pkgs; [

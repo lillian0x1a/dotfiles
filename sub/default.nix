@@ -32,6 +32,7 @@
   security.rtkit.enable = true;
   programs.zsh.enable = true;
   services = {
+    openssh.enable = true;
     pulseaudio.enable = false;
     pipewire = {
       enable = true;

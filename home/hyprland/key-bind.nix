@@ -5,7 +5,7 @@
     "$menu" = "rofi -show drun";
     "$brouwser" = "firefox";
     "$power-menu" = "${builtins.toString ../rofi/powermenu.sh}";
-    "$sysinfo" = "${builtins.toString ../scripts/sysinfo.sh}";
+    "$sysinfo" = "sysinfo.sh";
     "$toggle-eww" = "${builtins.toString ../eww/scripts/toggle-eww.sh}";
     bind = [
       "$mainMod, Return, exec, $terminal"
