@@ -58,10 +58,16 @@
       };
       asgard = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { hostname = "asgard"; };
+        specialArgs = { 
+          hostname = "asgard";
+          ipAddress = "192.168.11.150";
+          sshKeys = [
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIdeUZOVgX9AdWmtdQURHYEO8olP3hUMVhj4MFN0NBVM lillian@athena"
+          ];
+        };
         modules = [
           disko.nixosModules.disko
-          ./hosts/asgard/configuration.nix
+          ./hosts/asgard
           ./hosts/asgard/disko.nix
         ];
       };

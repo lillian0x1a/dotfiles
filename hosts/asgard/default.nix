@@ -1,4 +1,4 @@
-{config, pkgs, ...}:{
+{config, pkgs, specialArgs, ...}:{
   imports = [
     ./hardware.nix
     ../../modules/common.nix
@@ -13,15 +13,11 @@
     };
   };
   users.users = {
-    root.openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIdeUZOVgX9AdWmtdQURHYEO8olP3hUMVhj4MFN0NBVM lillian@nixos"
-    ];
+    root.openssh.authorizedKeys.keys = specialArgs.sshKeys;
     myuser = {
       isNormalUser = true;
       extraGroups = [ "wheel" ];
-      openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIdeUZOVgX9AdWmtdQURHYEO8olP3hUMVhj4MFN0NBVM lillian@nixos"
-      ];
+      openssh.authorizedKeys.keys = specialArgs.sshKeys;
     };
   };
   environment.systemPackages = with pkgs; [
