@@ -1,10 +1,9 @@
-{specialArgs, lib, ...}:{
+{lib, specialArgs, ...}:{
   networking = {
-    hostName = "${specialArgs.hostname}";
     useDHCP = lib.mkDefault true;
     interfaces.ens18.ipv4.addresses = [
       {
-        address = "192.168.11.150";
+        address = "${specialArgs.ipAddress}";
         prefixLength = 24;
       }
     ];

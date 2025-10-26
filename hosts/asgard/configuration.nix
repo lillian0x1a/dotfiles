@@ -1,7 +1,8 @@
 {config, pkgs, ...}:{
   imports = [
     ./hardware.nix
-    ./network.nix 
+    ../../modules/common.nix
+    ../../modules/server.nix
   ];
   services.openssh = {
     enable = true;
