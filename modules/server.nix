@@ -7,7 +7,7 @@
         prefixLength = 24;
       }
     ];
-    defaultGateway = "192.168.11.1";
+    defaultGateway = "${specialArgs.defaultGateway}";
     nameservers = [
       "9.9.9.9"
       "1.1.1.1"

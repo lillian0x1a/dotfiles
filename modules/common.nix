@@ -14,5 +14,6 @@
   i18n.defaultLocale = "en_GB.UTF-8";
   networking = {
     hostName = specialArgs.hostname;
+    networkmanager.enable = true;
   };
 }

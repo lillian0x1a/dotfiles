@@ -60,7 +60,9 @@
         inherit system;
         specialArgs = { 
           hostname = "asgard";
+          username = "lillian";
           ipAddress = "192.168.11.150";
+          defaultGateway = "192.168.11.1";
           sshKeys = [
             "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIdeUZOVgX9AdWmtdQURHYEO8olP3hUMVhj4MFN0NBVM lillian@athena"
           ];

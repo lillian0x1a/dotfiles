@@ -14,7 +14,7 @@
   };
   users.users = {
     root.openssh.authorizedKeys.keys = specialArgs.sshKeys;
-    myuser = {
+    ${specialArgs.username} = {
       isNormalUser = true;
       extraGroups = [ "wheel" ];
       openssh.authorizedKeys.keys = specialArgs.sshKeys;
