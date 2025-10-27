@@ -55,7 +55,7 @@
           hm.nixosModules.home-manager
           ./home
           ./hosts/athena
-          ./modules
+          ./modules/nixos
           ./secrets
         ];
       };
@@ -72,7 +72,7 @@
           disko.nixosModules.disko
           ./hosts/asgard
           ./hosts/asgard/disko.nix
-          ./modules
+          ./modules/nixos
         ];
       };
     };
