@@ -6,7 +6,6 @@
   };
   home-manager.users.${specialArgs.username} = { pkgs, lib, inputs, ... }:{
     imports = [
-      ./rofi
       ./scripts
       ./browser.nix
       ./ghostty.nix
@@ -20,6 +19,7 @@
       eww.enable = true;
       hyprland.enable = true;
       nixvim.enable = true;
+      rofi.enable = true;
       cli.enable = true;
       hypridle.enable = true;
       hyprlock.enable = true;
