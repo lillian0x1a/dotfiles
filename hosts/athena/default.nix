@@ -4,11 +4,12 @@
     ./hardware-configuration.nix
     ./user.nix
     ./xremap.nix
-    ../../modules/common.nix
-    ../../modules/dm.nix
-    ../../modules/sound.nix
-    ../../modules/wm.nix
   ];
+  my = {
+    dm.enable = true;
+    sound.enable = true;
+    wm.enable = true;
+  };
   system.stateVersion = specialArgs.stateVersion;
   environment.systemPackages = with pkgs; [
     sops

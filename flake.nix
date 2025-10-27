@@ -36,31 +36,32 @@
   outputs = inputs@{nixpkgs, hm, disko, ...}:
   let
     system = "x86_64-linux";
-    stateVersion = "25.05";
-    username = "lillian";
-    gitUsername = "lillian0x";
-    gitUseremail = "183957662+lillian0x1a@users.noreply.github.com";
+    commonSpecialArgs = {
+      inherit system inputs;
+      username = "lillian";
+      gitUsername = "lillian0x";
+      gitUseremail = "183957662+lillian0x1a@users.noreply.github.com";
+    };
+    makeHost = import ./lib/makeHost.nix {
+      inherit nixpkgs system commonSpecialArgs;
+    };
   in
   {
     nixosConfigurations = {
-      athena = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {
-          hostname = "athena";
-          inherit system stateVersion username gitUsername gitUseremail inputs;
-        };
+      athena = makeHost {
+        name = "athena";
+        extraArgs = { stateVersion = "25.05"; };
         modules = [
           hm.nixosModules.home-manager
           ./home
           ./hosts/athena
+          ./modules
           ./secrets
         ];
       };
-      asgard = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { 
-          hostname = "asgard";
-          username = "lillian";
+      asgard = makeHost {
+        name = "asgard";
+        extraArgs = { 
           ipAddress = "192.168.11.150";
           defaultGateway = "192.168.11.1";
           sshKeys = [
@@ -71,6 +72,7 @@
           disko.nixosModules.disko
           ./hosts/asgard
           ./hosts/asgard/disko.nix
+          ./modules
         ];
       };
     };

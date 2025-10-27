@@ -4,6 +4,9 @@
     ../../modules/common.nix
     ../../modules/server.nix
   ];
+  my = {
+    server.enable = true;
+  };
   services.openssh = {
     enable = true;
     settings = {
