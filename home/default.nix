@@ -6,8 +6,6 @@
   };
   home-manager.users.${specialArgs.username} = { pkgs, lib, inputs, ... }:{
     imports = [
-      inputs.nixvim.homeManagerModules.nixvim
-      ./nixvim
       ./rofi
       ./scripts
       ./browser.nix
@@ -22,6 +20,7 @@
     my-hm = {
       eww.enable = true;
       hyprland.enable = true;
+      nixvim.enable = true;
       hypridle.enable = true;
       hyprlock.enable = true;
       ime.enable = true;
