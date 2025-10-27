@@ -13,7 +13,6 @@
       ./sound.nix
       ./swaync.nix
       ./swww.nix
-      ./terminal.nix
       ../modules/hm
       ../stylix
     ];
@@ -21,6 +20,7 @@
       eww.enable = true;
       hyprland.enable = true;
       nixvim.enable = true;
+      cli.enable = true;
       hypridle.enable = true;
       hyprlock.enable = true;
       ime.enable = true;
