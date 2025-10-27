@@ -8,19 +8,24 @@
     imports = [
       inputs.nixvim.homeManagerModules.nixvim
       ./eww
-      ./hyprland
       ./nixvim
       ./rofi
       ./scripts
       ./browser.nix
       ./ghostty.nix
-      ./ime.nix
       ./sound.nix
       ./swaync.nix
       ./swww.nix
       ./terminal.nix
+      ../modules/hm
       ../stylix
     ];
+    my-hm = {
+      hyprland.enable = true;
+      hypridle.enable = true;
+      hyprlock.enable = true;
+      ime.enable = true;
+    };
     nixpkgs.config = {
       allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
         "vscode"
