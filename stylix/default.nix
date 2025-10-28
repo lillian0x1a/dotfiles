@@ -27,16 +27,16 @@ in
      };
     fonts = {
       serif = {
-        package = pkgs.noto-fonts-cjk-serif;
-        name = "Noto Serif CJK JP";
+        package = pkgs.ibm-plex;
+        name = "IBM Plex Serif";
       };
       sansSerif = {
-        package = pkgs.noto-fonts-cjk-sans;
-        name = "Noto Sans CJK JP";
+        package = pkgs.plemoljp-nf;
+        name = "IBM Plex Sans";
       };
       monospace = {
-        package = pkgs.nerd-fonts.fira-code;
-        name = "FiraCode Nerd Font Mono";
+        package = pkgs.plemoljp-nf;
+        name = "IBM Plex Mono";
       };
       emoji = {
         package = pkgs.noto-fonts-emoji;
@@ -44,9 +44,9 @@ in
       };
     };
     targets = {
-      gtk.enable = true;  # GTK アプリのテーマ適用
+      gtk.enable = true;
       qt.enable = true;
-      firefox.profileNames = [ "nix" ];  # プロファイル名を指定
+      firefox.profileNames = [ "nix" ];
       librewolf.profileNames = [ "default" ];
     };
   };
