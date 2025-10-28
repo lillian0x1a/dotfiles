@@ -7,9 +7,12 @@ with lib;
     description = "Enable the Rofi module.";
   };
   config = mkIf config.my-hm.rofi.enable {
-    home.packages = [
-      (pkgs.writeShellScriptBin "powermenu.sh" ./powermenu.sh)
-    ];
+    home = {
+      packages = [
+        (pkgs.writeShellScriptBin "powermenu.sh" ./powermenu.sh)
+      ];
+      file.".config/rofi/rofi.png".source = ./rofi.png;
+    };
     programs.rofi = {
       enable = true;
       package = pkgs.rofi-wayland;
@@ -23,6 +26,5 @@ with lib;
         mkLiteral = config.lib.formats.rasi.mkLiteral;
       });
     };
-    home.file.".config/rofi/rofi.png".source = ./rofi.png;
   };
 }
