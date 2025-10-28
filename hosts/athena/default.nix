@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ./user.nix
     ./xremap.nix
+    # ../asgard/k3s.nix
   ];
   my = {
     dm.enable = true;
