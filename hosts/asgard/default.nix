@@ -5,15 +5,15 @@
     ../../modules/server.nix
   ];
   my = {
-    server.enable = true;
+    server = {
+      enable = true;
+      ipAddress = specialArgs.ipAddress;
+      defaultGateway = specialArgs.defaultGateway;
+    };
   };
   services.openssh = {
     enable = true;
-    settings = {
-      # permitRootLogin = "no";
-      # passwordAuthentication = "no";
-      PermitRootLogin = "prohibit-password";
-    };
+    settings.PermitRootLogin = "prohibit-password";
   };
   users.users = {
     root.openssh.authorizedKeys.keys = specialArgs.sshKeys;
@@ -31,5 +31,5 @@
   ];
   security.sudo.wheelNeedsPassword = false;
   system.autoUpgrade.enable = false;
-  system.stateVersion = "25.05";
+  system.stateVersion = specialArgs.stateVersion;
 }

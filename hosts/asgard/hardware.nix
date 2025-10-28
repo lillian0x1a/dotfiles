@@ -1,6 +1,5 @@
 {config, modulesPath, lib, ...}:{
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   boot = {
     loader = {
