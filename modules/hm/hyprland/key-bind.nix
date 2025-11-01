@@ -5,7 +5,6 @@
   "$brouwser" = "firefox";
   "$power-menu" = "powermenu.sh";
   "$sysinfo" = "sysinfo.sh";
-  "$toggle-eww" = "${builtins.toString ../eww/scripts/toggle-eww.sh}";
   bind = [
     "$mainMod, Return, exec, $terminal"
     "$mainMod, X, killactive,"
@@ -18,7 +17,6 @@
     "$mainMod, Q, exec, $power-menu"
     "$mainMod, B, exec, $brouwser"
     "$mainMod, I, exec, $sysinfo"
-    "$mainMod, M, exec, $toggle-eww"
     #FullScreen mode
     "$mainMod, F, fullscreen, 1"
     "$mainMod, G, fullscreen"

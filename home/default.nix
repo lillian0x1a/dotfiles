@@ -16,7 +16,6 @@
       ../stylix
     ];
     my-hm = {
-      eww.enable = true;
       hyprland.enable = true;
       nixvim.enable = true;
       rofi.enable = true;

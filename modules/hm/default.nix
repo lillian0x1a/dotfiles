@@ -1,6 +1,5 @@
 {
   imports = [
-    ./eww
     ./hyprland
     ./nixvim
     ./rofi
